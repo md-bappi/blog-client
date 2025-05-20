@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@layer {
+  :root {
+    --bg-color: ;
+    --color: ;
+  }
+
+  .dark {
+    --bg-color: ;
+    --color: ;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
