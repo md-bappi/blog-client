@@ -51,12 +51,12 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className=" px-2 h-screen shadow">
+    <div className=" px-2 h-screen shadow ">
       {/* pages */}
-      <div className=" mb-3">
+      <div className=" py-3 flex flex-col gap-2">
         <NavLink icons={<Home size="16" />} name="Home" />
         <NavLink icons={<GitCommit size="16" />} name="Blogs" />
-        <NavLink icons={<GitCommit size="16" />} name="comments" />
+        <NavLink icons={<GitCommit size="16" />} name="Comments" />
       </div>
 
       {/* sidebar categories */}

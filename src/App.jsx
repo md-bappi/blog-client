@@ -8,25 +8,31 @@ import Profile from "./pages/Profile";
 import CreateBlog from "./pages/CreateBlog";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
+import Sidebar from "./components/navbar/Sidebar";
 
 const App = () => {
   return (
-    <div className="">
+    <>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/blogs" element={<Blogs />} />
-        <Route path="/comments" element={<Comments />} />
+      <div className="grid grid-cols-1 md:grid-cols-12">
+        <span className=" hidden md:grid md:col-span-2">
+          <Sidebar />
+        </span>
+        <Routes className=" col-span-10">
+          <Route path="/" element={<Home />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/comments" element={<Comments />} />
 
-        <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<NotFound />} />
 
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/create-blog" element={<CreateBlog />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/create-blog" element={<CreateBlog />} />
 
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
-    </div>
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </div>
+    </>
   );
 };
 

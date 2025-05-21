@@ -25,44 +25,53 @@ const Navbar = () => {
 
   return (
     <nav className=" navbar relative">
-      <div className="w-screen px-1 border-b border-gray-50 shadow ">
-        <div className="flex justify-between items-center gap-4 h-12 py-2">
-          {/* Logo */}
+      <div className="w-full border-b border-gray-50 shadow bg-white">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-2 h-14 gap-4">
+          {/* Logo & Sidebar Toggle */}
           <div className="flex items-center gap-2">
-            <span
+            <button
               onClick={() => setShowSidebar(!showSidebar)}
-              className="font-bold "
+              className="md:hidden"
             >
-              <AlignJustify size={18} strokeWidth={2.2} />
-            </span>
-            <Link to="/" className="uppercase font-semibold">
-              <span className="text-violet-600 font-bold text-2xl">G</span>blog
+              <AlignJustify size={20} strokeWidth={2.2} />
+            </button>
+            <Link to="/" className="uppercase font-semibold text-xl">
+              <span className="text-indigo-600 font-bold text-2xl">G</span>blog
             </Link>
           </div>
 
           {/* Search Form */}
           <form
             onSubmit={handleForm}
-            className="w-6/12 flex items-center py-[2px] px-2 pb-1 rounded-4xl bg-gray-100 md:w-2/5 lg:w-3/12"
+            className="hidden sm:flex items-center bg-gray-100 px-3 py-1 rounded-full w-full max-w-xs lg:max-w-sm"
           >
             <input
               type="text"
-              className=" w-full focus:outline-none text-md"
               placeholder="Search..."
+              className="bg-transparent w-full outline-none text-sm"
             />
-            <span className=" px-1">
-              <Search strokeWidth={1.5} size={16} />
-            </span>
+            <Search
+              strokeWidth={1.5}
+              size={16}
+              className="text-gray-500 ml-1"
+            />
           </form>
 
-          {/* Right Controls */}
-          <span onClick={() => setShowProfile(!showProfile)}>
-            <img
+          {/* Profile Icon */}
+          <div>
+            <Link
+              to="/login"
+              className=" bg-indigo-500 text-white hover:bg-indigo-600 transition md:py-1 px-3 rounded-full pb-1 md:pb-2 tracking-wider md:tracking-widest"
+            >
+              Login
+            </Link>
+            {/* <img
               src="/images/default-profile-icon.png"
               alt="User icon"
+              onClick={() => setShowProfile(!showProfile)}
               className="size-6 cursor-pointer"
-            />
-          </span>
+            /> */}
+          </div>
         </div>
       </div>
 
